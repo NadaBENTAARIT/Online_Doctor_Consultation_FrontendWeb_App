@@ -1,0 +1,62 @@
+
+<div class="res1" *ngIf="resultat1 === true">Votre score est {{score}} .D'apres vos reponses , vous n'etes pas malades</div>
+<div class="res2" *ngIf="resultat2 === true">Votre score est {{score}} .D'apres vos reponses , vous devez consulter votre medecin</div>
+<div class="res3" *ngIf="resultat3 === true">Votre score est {{score}} .D'apres vos reponses , vous etes malades</div>
+
+
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    
+<h3><strong >Merci de répondre attentivement à ce formulaire</strong></h3>
+
+
+
+ <br> 
+ <table class="table">
+ <thead class="cyan-text">
+   <tr>
+     <th >Question</th> 
+     <th>Oui</th>
+     <th>Non</th>
+     <th>Parfois</th>
+
+   </tr>
+ </thead>
+ <tbody>
+
+     <tr *ngFor = "let question of questions; index as i"> 
+        
+         <td > 
+           {{question}} 
+         </td>
+           <td>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="{{i}}" value="1" id="{{i}}" [(ngModel)]="reponses[i]" required="required">
+              </label>
+            </div>
+            </td>
+           <td>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="{{i}}" value="0" id="{{i}}" [(ngModel)]="reponses[i]" >
+              </label>
+            </div>
+        </td>
+        <td>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input"name="{{i}}" value="0.5" id="{{i}}" [(ngModel)]="reponses[i]">
+            </label>
+          </div>
+      </td>
+</tr>
+   
+  
+ </tbody>
+</table>
+
+
+<button class="btn btn-primary" type="submit" >Valider mes réponses</button>
+
+</form>
+

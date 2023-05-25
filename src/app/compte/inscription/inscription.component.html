@@ -1,0 +1,52 @@
+<!-- Default form login -->
+
+
+
+
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" class="text-center border border-light p-5">
+    
+    <p class="h4 mb-4" >Inscription</p>
+   
+    <p *ngIf="inscri === true" style="color:rgb(0, 255, 115);"> Bienvenue!!Vous pouvez maintenant vous connecter à votre compte</p>
+    <p *ngIf="existedeja === true" style="color:rgb(255, 0, 0);"> Le compte existe deja!</p>
+    <p *ngIf="attribumanquant === true" style="color:rgb(255, 0, 0);"> Informations maquantes</p>
+
+    
+    
+    <!-- Email -->
+    <input type="text"  [(ngModel)]="user.mail" name="mail" class="form-control mb-4" placeholder="E-mail">
+    <!-- Password -->
+    <input type="password" [(ngModel)]="user.password" name="password" class="form-control mb-4" placeholder="Mot de passe" >
+    <!-- telephone -->
+    <input type="text" [(ngModel)]="user.tel" name="tel" class="form-control mb-4" placeholder="N°telephone" >
+    <!-- username -->
+    <input type="text" [(ngModel)]="user.username" name="username" class="form-control mb-4" placeholder="Nom d'utilisateur" >
+    <!-- Password -->
+
+    <select class="browser-default custom-select mb-4" [(ngModel)]="user.role" name="role" >
+        <option disabled   selected  class="form-control mb-4" >Choisir votre statut</option>
+        <option value="Administrateur" class="form-control mb-4"  >Administrateur </option >
+        <option value="Medecin" class="form-control mb-4" >Medecin</option>
+        <option value="Patient"  class="form-control mb-4" >Patient</option>
+        
+    </select>
+  
+
+    
+
+    <!-- Sign in button -->
+    <button class="btn btn-info btn-block my-4" type="submit" >S'inscrire</button>
+
+    
+
+    <!-- Social login -->
+    <p>ou se connecter avec:</p>
+
+    <a href="#" class="mx-2" role="button"><i class="fab fa-facebook-f light-blue-text"></i></a>
+    <a href="#" class="mx-2" role="button"><i class="fab fa-twitter light-blue-text"></i></a>
+    <a href="#" class="mx-2" role="button"><i class="fab fa-linkedin-in light-blue-text"></i></a>
+    <a href="#" class="mx-2" role="button"><i class="fab fa-github light-blue-text"></i></a>
+
+</form>
+<!-- Default form login -->
+

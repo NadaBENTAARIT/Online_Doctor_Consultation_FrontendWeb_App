@@ -1,0 +1,28 @@
+<br><br>
+ 
+
+ <button type="button" class="btn btn-primary" routerLink="/ajouterPost">Ajouter un post</button>
+
+
+ <h2 class="h1-responsive font-weight-bold text-center my-5 ">Liste des blogs</h2>
+<div class="row" *ngFor = "let blog of blogs" >
+  
+                <div class="col-lg-2">
+                        <!-- Featured image -->
+                </div>
+      
+                <div class="col-lg-8">
+                         
+                          <h3 class="font-weight-bold mb-3"><strong>{{blog.titre}}</strong></h3>
+                          <strong> <i class="date">Date de publication : {{blog.date}}</i> </strong>
+                          <br> <br>
+                          <p>contenu {{blog.contenu}}</p>
+                          <p> <a><strong class="auteur"> par {{blog.nomMedecin}} {{blog.prenomMedecin}}</strong></a></p>
+                          
+                </div>
+                
+     </div>
+    
+  
+    
+     

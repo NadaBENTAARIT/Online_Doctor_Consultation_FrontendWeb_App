@@ -1,0 +1,33 @@
+<h2> <b>Liste de mes patients</b> </h2>
+<br>
+
+<table class="table">
+    <thead class="cyan-text">
+      <tr>
+        <th *ngFor = "let i of headers"> 
+            {{i}} 
+        </th>
+        <th></th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor = "let patient of patients"> 
+           
+            <td *ngFor = "let i of headers"> 
+              {{patient[i]}} 
+            </td> 
+           
+            <td>
+                <button type="button" class="btn btn-info" (click)="consulterDossier(patient['ID'])">Consulter dossier</button>
+               
+                
+            </td>
+
+
+          </tr>
+      
+     
+    </tbody>
+  </table>
